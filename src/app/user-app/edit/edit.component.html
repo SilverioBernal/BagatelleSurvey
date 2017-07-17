@@ -1,0 +1,45 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+  <h1>Usuarios</h1>
+  <h5>Edición</h5>
+  <div class="row">
+    <form #f="ngForm" class="form-horizontal" (ngSubmit) = "onSubmit(f)">
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" class="form-control" id="id"
+        name ="id" [(ngModel)]="user.id" readonly>
+      </div>
+      <div class="form-group">
+        <label for="description">Nombre</label>
+        <input type="text" class="form-control" id="description"
+        name ="description" [(ngModel)]="user.description" >
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="checkbox" id="rolMesero" [(ngModel)]="user.rolMesero"  name="rolMesero" />
+          <label for="rolMesero">Mesero</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="checkbox" id="rolAdmin"  [(ngModel)]="user.rolAdmin"  name="rolAdmin" />
+          <label for="rolAdmin">Administrador</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="text" class="form-control" id="password"
+        name ="password" [(ngModel)]="user.password" >
+      </div>
+      <div class="row">
+        <div class="center col s4">
+          <a [routerLink]="['../../userapp']" class="btn-floating waves-effect waves-light red"><i class="material-icons">fast_rewind</i></a>
+        </div>
+        <div class="center col s4">
+          <span> </span>
+        </div>
+        <div class="center col s4">
+          <button type="submit" class="btn btn-default">Guardar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

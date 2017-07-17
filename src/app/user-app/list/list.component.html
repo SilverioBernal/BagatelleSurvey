@@ -1,41 +1,43 @@
-
-<h1>Usuarios</h1>
-<div class="row">
-  <p-dataTable [value]="usersApp" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10,20]">
-    <p-column field="id" header="Id"></p-column>
-    <p-column field="description" header="Nombre"></p-column>
-    <p-column field="rolMesero" header="Mesero">
-        <ng-template let-user="rowData" pTemplate="body">
-            <span [style.color]="user.rolMesero == 1 ?'green':'red'">{{user.rolMesero == 1 ?'On':'Off'}}</span>
-        </ng-template>
-    </p-column>
-    <p-column field="rolAdmin" header="Admin">
-        <ng-template let-user="rowData" pTemplate="body">
-            <span [style.color]="user.rolAdmin == 1 ?'green':'red'">{{user.rolAdmin == 1 ?'On':'Off'}}</span>
-        </ng-template>
-    </p-column>
-    <p-column field="active" header="Activo">
-        <ng-template let-user="rowData" pTemplate="body">
-            <span [style.color]="user.active == 1 ?'green':'red'">{{user.active == 1 ?'On':'Off'}}</span>
-        </ng-template>
-    </p-column>
-    <p-column styleClass="col-button" header="">
-        <ng-template let-restaurant="rowData" pTemplate="body">
-            <button type="button" class="btn-floating waves-effect waves-light red" pButton (click)="deleteUserApp(restaurant.id)"><i class="material-icons left">delete</i></button>
-            <span> | </span>
-            <button type="button" class="btn-floating waves-effect waves-light green" pButton (click)="deleteUserApp(restaurant.id)"><i class="material-icons left">mode_edit</i></button>
-        </ng-template>
-    </p-column>
-  </p-dataTable>
-</div>
-<div class="row">
-  <div class="center col s4">
-    <a href="/home" class="btn-floating waves-effect waves-light green"><i class="material-icons">fast_rewind</i></a>
+<app-top-bar></app-top-bar>
+<div class="container">
+  <h1>Usuarios</h1>
+  <div class="row">
+    <p-dataTable [value]="usersApp" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10,20]">
+      <p-column field="id" header="Id"></p-column>
+      <p-column field="description" header="Nombre"></p-column>
+      <p-column field="rolMesero" header="Mesero">
+          <ng-template let-user="rowData" pTemplate="body">
+              <span [style.color]="user.rolMesero == 1 ?'green':'red'">{{user.rolMesero == 1 ?'On':'Off'}}</span>
+          </ng-template>
+      </p-column>
+      <p-column field="rolAdmin" header="Admin">
+          <ng-template let-user="rowData" pTemplate="body">
+              <span [style.color]="user.rolAdmin == 1 ?'green':'red'">{{user.rolAdmin == 1 ?'On':'Off'}}</span>
+          </ng-template>
+      </p-column>
+      <!--p-column field="active" header="Activo">
+          <ng-template let-user="rowData" pTemplate="body">
+              <span [style.color]="user.active == 1 ?'green':'red'">{{user.active == 1 ?'On':'Off'}}</span>
+          </ng-template>
+      </p-column-->
+      <p-column styleClass="col-button" header="">
+          <ng-template let-userApp="rowData" pTemplate="body">
+              <button type="button" class="btn-floating waves-effect waves-light red" pButton (click)="deleteUserApp(userApp.id)"><i class="material-icons left">delete</i></button>
+              <span> | </span>
+              <a [routerLink]="[userApp.id]" class="btn-floating waves-effect waves-light green"><i class="material-icons">mode_edit</i></a>
+          </ng-template>
+      </p-column>
+    </p-dataTable>
   </div>
-  <div class="center col s4">
-    <span> </span>
-  </div>
-  <div class="center col s4">
-    <a class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
+  <div class="row">
+    <div class="center col s4">
+      <a [routerLink]="['']" class="btn-floating waves-effect waves-light red"><i class="material-icons">home</i></a>
+    </div>
+    <div class="center col s4">
+      <span> </span>
+    </div>
+    <div class="center col s4">
+      <a [routerLink]="['add']" class="btn-floating waves-effect waves-light green"><i class="material-icons">add</i></a>
+    </div>
   </div>
 </div>

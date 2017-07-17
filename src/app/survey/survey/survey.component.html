@@ -1,0 +1,30 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+  <h1>Encuesta de satisfacción</h1>
+  <h5>¿Como te pareció nuestro servicio?</h5>
+  <div class="row">
+    <div class="row">
+      <div class="col s9">
+        <br><br><br><br>
+        <div class="center col s4" >
+          <a [routerLink]="['/answer', idInvoice,'E']"><i class="material-icons large icon-orange">sentiment_satisfied</i></a>
+          <br>
+          <h4>Excelente</h4>
+        </div>
+        <div class="center col s4" >
+          <a [routerLink]="['/answer', idInvoice,'R']" ><i class="material-icons large icon-gray">sentiment_neutral</i></a>
+          <br>
+          <h4>Regular</h4>
+        </div>
+        <div class="center col s4">
+          <a [routerLink]="['/answer', idInvoice,'M']"><i class="material-icons large icon-red">sentiment_dissatisfied</i></a>
+          <br>
+          <h4>Malo</h4>
+        </div>
+      </div>
+      <div class="col s3">
+        <img width="100%" src="../assets/chef.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>

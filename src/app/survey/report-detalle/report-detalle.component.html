@@ -1,0 +1,25 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+  <h1>Reporte de satisfacción</h1>
+  <div class="row">
+    <p-dataTable  #dt [value]="surveys" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10,20]" exportFilename="encuesta">
+      <p-header>
+        <div class="ui-helper-clearfix">
+            <button type="button" pButton icon="fa-file-o" iconPos="left" label="Exportar" (click)="dt.exportCSV()" style="float:left">Exportar</button>
+        </div>
+      </p-header>
+      <p-column field="restaurantId" header="Restaurante"></p-column>
+      <p-column field="userId" header="Mesero"></p-column>
+      <p-column field="invoiceId" header="Factura"></p-column>
+      <p-column field="answer" header="Respuesta"></p-column>
+    </p-dataTable>
+  </div>
+  <div class="row">
+    <div class="center col s4">
+      <a [routerLink]="['/report']" class="btn-floating waves-effect waves-light green"><i class="material-icons">fast_rewind</i></a>
+    </div>
+    <div class="center col s4">
+      <span> </span>
+    </div>
+  </div>
+</div>

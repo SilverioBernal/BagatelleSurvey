@@ -1,0 +1,20 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+  <h1>Encuesta de satisfacción</h1>
+  <h5>Ingresa el numero de factura</h5>
+  <div class="row">
+    <div class="row">
+      <div class="col s9">
+        <div class="center col s6" >
+          <input [(ngModel)]="factura" type="text"
+          class="form-control" id="description"
+          placeholder="Numero de factura">
+          <button type="button" class="btn btn-default" (click)="selectInv()">Continuar</button>
+        </div>
+      </div>
+      <div class="col s3">
+        <img width="100%" src="../assets/chef.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>

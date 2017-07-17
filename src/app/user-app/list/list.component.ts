@@ -11,16 +11,20 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
 })
 export class ListComponent implements OnInit {
 
-  usersApp : UserAppModel[];
+  usersApp: UserAppModel[];
 
   constructor(private route: ActivatedRoute, private userAppService: UserAppService) { }
 
   ngOnInit() {
-    this.userAppService.GetAll()
-    .subscribe(users => this.usersApp = users);
+    this.loadData()
   }
 
-  deleteUserApp(id:string){
+  deleteUserApp(id: string) {
+    this.userAppService.Delete(id).subscribe(res => this.loadData());
+  }
 
+  loadData() {
+  this.userAppService.GetAll()
+      .subscribe(restaurants => this.usersApp = restaurants);
   }
 }

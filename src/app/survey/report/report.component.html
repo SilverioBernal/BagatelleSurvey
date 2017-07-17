@@ -1,0 +1,32 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+  <h1>Reporte de satisfacción</h1>
+  <h5>Ingresa el rango de fechas</h5>
+  <div class="row">
+    <div class="col s9">
+      <div class="row">
+        <div class="center col s6" >
+          <div class="form-group">
+            <label for="description">Desde</label>
+            <input [(ngModel)]= "desde" type="date">
+          </div>
+          <div class="form-group">
+            <label for="description">Hasta</label>
+            <input [(ngModel)]= "hasta"  type="date">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="center col s2">
+          <a [routerLink]="['']"  class="btn-floating waves-effect waves-light green"><i class="material-icons">home</i></a>
+        </div>
+        <div class="center col s6">
+          <button type="button" (click)="generar()" class="btn btn-default">Generar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col s3">
+      <img width="100%" src="../assets/chef.jpg" alt="">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+  <h1>Restaurantes</h1>
+  <h5>Edición</h5>
+  <div class="row">
+    <form #f="ngForm" class="form-horizontal" (ngSubmit) = "onSubmit(f)">
+      <div class="form-group">
+        <label for="description">Id</label>
+        <input type="text" class="form-control" id="id"
+        name ="id" placeholder="id del restaurante"
+        [(ngModel)]="restaurant.id" ngControl="id"  readonly>
+      </div>
+      <div class="form-group">
+        <label for="description">Nombre</label>
+        <input type="text" class="form-control" id="description"
+        name ="description" placeholder="Nombre del restaurante"
+        [(ngModel)]="restaurant.description" ngControl="description">
+      </div>
+      <div class="row">
+        <div class="center col s4">
+          <a [routerLink]="['/restaurant']" class="btn-floating waves-effect waves-light green"><i class="material-icons">fast_rewind</i></a>
+        </div>
+        <div class="center col s4">
+          <span> </span>
+        </div>
+        <div class="center col s4">
+          <button type="submit" class="btn-floating waves-effect waves-light red"><i class="material-icons">done</i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

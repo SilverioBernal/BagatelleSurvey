@@ -1,6 +1,6 @@
 export class UserAppModel {
     id;
-    descripcion;
+    description;
     rolMesero;
     rolAdmin;
     password;
