@@ -1,4 +1,4 @@
-import { MaterializeModule } from 'angular2-materialize';
+import { MaterializeModule, MaterializeDirective } from 'angular2-materialize';
 import { AppModule } from './../app.module';
 import { FormsModule } from '@angular/forms';
 import { SeguridadService } from './seguridad.service';
